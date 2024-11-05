@@ -77,7 +77,12 @@ class SoundService: Service() {
             }
         }
     }
+    class Animal
     private fun startMoiseController() {
+        val animals: MutableList<Animal> = mutableListOf()
+        val bornAimals: MutableList<Animal> = mutableListOf()
+        animals.addAll(bornAimals)
+
         noiseController?.start()
         scope.launch(Dispatchers.Default) {
             while (true) {

@@ -30,17 +30,17 @@ fun VolumeScreen(
     onNavigateToMainScreen: () -> Unit,
     viewModel: SoundViewModel = viewModel()
 ) {
-//    LaunchedEffect(key1 = true) {
-//        SoundService.startService(App.appContext,"service started")
-//    }
+    LaunchedEffect(key1 = true) {
+        SoundService.startService(App.appContext,"service started")
+    }
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(top = 22.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        val deviceVolumeState by DataHolder.stateVolume.collectAsState()
-        val deviceNoiseState by DataHolder.stateNoise.collectAsState()
+        val deviceVolumeState by viewModel.stateVolume.collectAsState()
+        val deviceNoiseState by viewModel.stateNoise.collectAsState()
 
         Text(
             text = "App sound! maxVolume:${deviceVolumeState.maxVolume} | curValue:${deviceVolumeState.currentVolume}",

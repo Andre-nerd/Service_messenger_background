@@ -15,6 +15,7 @@ class SampleService: Service() {
     private val scope  = CoroutineScope(Job() + Dispatchers.Default)
     override fun onCreate() {
         Log.d(LOG_SERVICE, "$this | onCreate()")
+        Log.d(LOG_SERVICE, "Example CI Github")
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {

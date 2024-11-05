@@ -82,7 +82,7 @@ class MainActivity : ComponentActivity() {
             }
         )
         if (permissionsState.allPermissionsGranted) {
-            SoundService.startService(App.appContext,"service started")
+//            SoundService.startService(App.appContext,"service started")
             AppNavHost()
         } else {
             ShowScreenRationalePermission(permissionsState)
